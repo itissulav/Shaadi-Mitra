@@ -1,0 +1,84 @@
+@charset "UTF-8";
+
+body{
+	background-color: #F8F3EC;
+}
+
+.main-body{
+	margin-top: 2vw;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	margin-right: 10vw;
+	gap: -30px;
+	
+}
+
+.greeting{
+	align-self: center;
+	text-align: center;	
+}
+.greeting h2{
+	color: #414B3B;
+	text-align: center;
+	font-family: Montserrat;
+	font-size: 30px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	letter-spacing: 5.6px;
+}
+
+.greeting h1{
+	font-family: Amsterdam;
+	font-size: 50px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	letter-spacing: 5.6px;
+}
+
+.greeting h3{
+	color: #414B3B;
+	text-align: center;
+	font-family: Montserrat;
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	letter-spacing: 3.6px;
+}
+
+.greeting-image{
+	width: 40vw;
+}
+.greeting-image img{
+	width: 100%;
+}
+
+.find-mitra-btn {
+  width: fit-content;
+  margin: 2rem auto;
+  margin-top: 0px;
+  text-align: center;
+  align-self: center;
+  align-items: center;
+  display: block;
+  padding: 0.8rem 2rem;
+  font-family: 'Montserrat', serif;
+  font-size: 1rem;
+  color: #fff;
+  background: linear-gradient(145deg, #b76e79, #f7c59f);
+  border: none;
+  border-radius: 2rem;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(183, 110, 121, 0.4);
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.find-mitra-btn:hover {
+  background: linear-gradient(145deg, #a85e68, #e6b088);
+  box-shadow: 0 8px 20px rgba(183, 110, 121, 0.6);
+  transform: translateY(-2px);
+}

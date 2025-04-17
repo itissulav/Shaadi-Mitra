@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+body{
+	background-color: #F9F3EC;
+}
+
+h1{
+	color: #414B3B;
+	text-align: center;
+	font-family: Montserrat;
+	font-size: 30px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	letter-spacing: 5.6px;
+}
+
+.title{
+	color: white;
+	text-align: center;
+	font-family: Amsterdam;
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	letter-spacing: 3.6px;
+}
+
+.review{
+	margin-top: 5%;
+	display:flex;
+	flex-direction: row;
+	justify-content: space-around;	
+	align-items: center;
+	overflow-x: auto;
+	gap: 10%;
+}
+
+.review_card{
+  display: flex;
+  flex-direction: column;       
+  align-items: center;          
+  text-align: center; 
+  width : 35%;
+  background-color: #543a14;
+}
+
+.review_card img {
+  width: 250px;          /* or any size you prefer */
+  height: 400px;
+  object-fit: cover;     /* crop image to fill the box */
+  border-radius: 10%;    /* optional: makes it circular */
+  padding: 15px;
+}
+
+.review_card p{
+	width : 100%;
+	color: white;
+}
