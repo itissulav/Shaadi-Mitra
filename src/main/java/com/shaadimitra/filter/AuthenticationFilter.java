@@ -21,7 +21,7 @@ public class AuthenticationFilter implements Filter {
 	private static final String REGISTER = "/register";
 	private static final String HOME = "/home";
 	private static final String ROOT = "/";
-	private static final String ABOUT = "/about";
+
 
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
@@ -48,14 +48,14 @@ public class AuthenticationFilter implements Filter {
 		boolean isLoggedIn = SessionUtil.getAttribute(req, "username") != null;
 
 		if (!isLoggedIn) {
-			if (uri.endsWith(LOGIN) || uri.endsWith(REGISTER)) {
+			if (uri.endsWith(LOGIN) || uri.endsWith(REGISTER)|| uri.endsWith(ROOT)) {
 				chain.doFilter(request, response);
 			} else {
-				res.sendRedirect(req.getContextPath() + ABOUT);
+				res.sendRedirect(req.getContextPath() + LOGIN);
 			}
 		} else {
-			if (uri.endsWith(LOGIN) || uri.endsWith(REGISTER)) {
-				res.sendRedirect(req.getContextPath() + HOME);
+			if (uri.endsWith(LOGIN) || uri.endsWith(REGISTER) || uri.endsWith(ROOT)) {
+				res.sendRedirect(req.getContextPath() + LOGIN);
 			} else {
 				chain.doFilter(request, response);
 			}

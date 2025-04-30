@@ -56,4 +56,6 @@ public class LoginService {
 		return dbUsername.equals(partnerModel.getUsername())
 				&& PasswordUtil.decrypt(dbPassword, dbUsername).equals(partnerModel.getPassword());
 	}
+	
+	
 }

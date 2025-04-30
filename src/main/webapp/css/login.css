@@ -48,7 +48,7 @@ select {
 	appearance: none;
 }
 
-button {
+.login-button {
   width: fit-content;
   margin: 2rem auto;
   margin-top: 25px;
@@ -70,7 +70,7 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.login-button:hover {
   background: linear-gradient(145deg, #a85e68, #e6b088);
   box-shadow: 0 8px 20px rgba(183, 110, 121, 0.6);
   transform: translateY(-2px);

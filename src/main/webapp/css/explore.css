@@ -26,26 +26,37 @@ h1{
 	letter-spacing: 3.6px;
 }
 
-.review{
+.profile{
 	margin-top: 5%;
 	display:flex;
-	flex-direction: row;
-	justify-content: space-around;	
-	align-items: center;
-	overflow-x: auto;
-	gap: 10%;
+	justify-content: center;
 }
 
-.review_card{
+.profile-card{
   display: flex;
-  flex-direction: column;       
-  align-items: center;          
-  text-align: center; 
-  width : 35%;
+  flex-direction: row;
+  justify-content: space-around; /* horizontal */
+  align-items: center;     /* vertical */
+  width: 80vh;
   background-color: #543a14;
 }
 
-.review_card img {
+.profile-card-details{
+	flex: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+.profile-card-details p{
+	text-align: center;
+}
+
+.profile-card-image{
+	flex:40%;
+}
+
+.profile-card img {
   width: 250px;          /* or any size you prefer */
   height: 400px;
   object-fit: cover;     /* crop image to fill the box */
@@ -53,7 +64,9 @@ h1{
   padding: 15px;
 }
 
-.review_card p{
-	width : 100%;
-	color: white;
+.card-button-container{
+  display: flex;
+  justify-content: center; /* horizontal */
+  align-items: center;     /* vertical */	
 }
+

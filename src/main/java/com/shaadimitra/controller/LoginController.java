@@ -40,7 +40,9 @@ public class LoginController extends HttpServlet {
 		Boolean loginStatus = loginService.loginUser(partnerModel);
 
 		if (loginStatus != null && loginStatus) {
-			SessionUtil.setAttribute(req, "username", username); 
+			SessionUtil.setAttribute(req, "username", username);
+			SessionUtil.setAttribute(req, "password", password);
+			
 			if (username.equals("admin")) {
 				CookiesUtil.addCookie(resp, "role", "admin", 5 * 30);
 				resp.sendRedirect(req.getServletContext().getContextPath() +"/login"); // Redirect to /home

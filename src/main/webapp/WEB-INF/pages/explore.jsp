@@ -32,83 +32,30 @@
 	
 	<h1>Meet your Match</h1>
 	
-	<div class = "review">
+	<div class = "profile">
 	
-		<div class = "review_card">
-			<img alt="Jack and Rose" src="${pageContext.request.contextPath}/resources/images/system/jackandrose.jpg">
-			<h2 class = 'title'>Jack and Rose</h2>
-			<div>
-				<p> Age: 23</p>
-				<p> Religion: AI</p>
-				<p> Salary: 23</p>
+		<div class = "profile-card">
+			<div class = "profile-card-image">
+				<img alt="Jack and Rose" src="${pageContext.request.contextPath}/resources/images/system/jackandrose.jpg">
 			</div>
-		</div>
-		
-		<div class = "review_card">
-			<img alt="Jack and Rose" src="${pageContext.request.contextPath}/resources/images/system/jackandrose.jpg">
-			<h2 class = 'title'>Jack and Rose</h2>
-			<div>
-				<p> Age: 23</p>
-				<p> Religion: AI</p>
-				<p> Salary: 23</p>
-			</div>
-		</div>
-		
-		<div class = "review_card">
-			<img alt="Jack and Rose" src="${pageContext.request.contextPath}/resources/images/system/jackandrose.jpg">
-			<h2 class = 'title'>Jack and Rose</h2>
-			<div>
-				<p> Age: 23</p>
-				<p> Religion: AI</p>
-				<p> Salary: 23</p>
-			</div>
-		</div>
-		
-		<div class = "review_card">
-			<img alt="Jack and Rose" src="${pageContext.request.contextPath}/resources/images/system/jackandrose.jpg">
-			<h2 class = 'title'>Jack and Rose</h2>
-			<div>
-				<p> Age: 23</p>
-				<p> Religion: AI</p>
-				<p> Salary: 23</p>
-			</div>
-		</div>
-		
-		<div class = "review_card">
-			<img alt="Jack and Rose" src="${pageContext.request.contextPath}/resources/images/system/jackandrose.jpg">
-			<h2 class = 'title'>Jack and Rose</h2>
-			<div>
-				<p> Age: 23</p>
-				<p> Religion: AI</p>
-				<p> Salary: 23</p>
-			</div>
-		</div>
-		
-		<div class = "review_card">
-			<img alt="Jack and Rose" src="${pageContext.request.contextPath}/resources/images/system/jackandrose.jpg">
-			<h2 class = 'title'>Jack and Rose</h2>
-			<div>
-				<p> Age: 23</p>
-				<p> Religion: AI</p>
-				<p> Salary: 23</p>
-			</div>
-		</div>
+			<div class = "profile-card-details">
+				<div>
+					<h2 class = 'title'>Jack and Rose</h2>
+				</div>
+				<div>
+					<p> Age: 23</p>
+					<p> Religion: AI</p>
+					<p> Salary: 23</p>
+				</div>
 				
+				<div class = "card-button-container">
+					<button>Yes</button>
+					<button>No</button>
+				</div>
+				
+			</div>
+		</div>				
 	</div>
-	
-	
-
-<script>
-  const reviewContainer = document.querySelector('.review');
-
-  reviewContainer.addEventListener('wheel', function(e) {
-    // If scrolling horizontally (shift key) or deltaX is used, allow it
-    if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;
-
-    // Otherwise, prevent vertical scroll from turning into horizontal scroll
-    e.preventDefault();
-  }, { passive: false });
-</script>
 	
 </body>
 </html>
