@@ -29,8 +29,8 @@ public class RegisterService {
 			return null;
 		}
 
-		String insertQuery = "INSERT INTO partners (first_name, last_name, gender, salary, religion, profession, email, number, username, dob, password) "
-				+ "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		String insertQuery = "INSERT INTO partners (first_name, last_name, gender, salary, religion, profession, email, number, username, dob, password, profileImage) "
+				+ "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 
 		try (PreparedStatement insertStmt = dbConn.prepareStatement(insertQuery)) {
@@ -47,6 +47,8 @@ public class RegisterService {
 			insertStmt.setString(9, partnerModel.getUsername());
 			insertStmt.setDate(10, Date.valueOf(partnerModel.getDob()));
 			insertStmt.setString(11, partnerModel.getPassword());
+			insertStmt.setString(12, partnerModel.getProfileimage());
+			
 
 
 

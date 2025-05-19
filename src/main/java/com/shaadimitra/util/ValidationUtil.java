@@ -48,11 +48,15 @@ public class ValidationUtil {
     }
 
     // 10. Validate if the date of birth is at least 16 years before today
-    public static boolean isAgeAtLeast16(LocalDate dob) {
+    public static boolean isAgeAtLeast20(LocalDate dob) {
         if (dob == null) {
             return false;
         }
         LocalDate today = LocalDate.now();
-        return Period.between(dob, today).getYears() >= 16;
+        return Period.between(dob, today).getYears() >= 20;
+    }
+    public static boolean isValidSalary(String salary) {
+    	String salaryRegex = "^\\d{1,8}$";
+    	return salary!= null && salary.matches(salaryRegex);
     }
 }

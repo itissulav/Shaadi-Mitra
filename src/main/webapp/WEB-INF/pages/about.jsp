@@ -42,6 +42,7 @@
                     Whether you're seeking a traditional match or a modern connection with deep roots, Patni.com is your trusted
                     companion in this journey.
             </p>
+            <a href="contact" class="find-mitra-btn">Contact us</a>
 		</div>
 	</div>
 	
@@ -66,6 +67,7 @@
 			<h2 class = 'title'>Ron and Hermione</h2>
 			<p>Ron and Hermione had their first conversation through Shaadi Mitra back when they were students.</p>
 		</div>
+		
 		
 	</div>
 	

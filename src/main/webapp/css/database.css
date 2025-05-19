@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #F8F3EC;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+table {
+    width: 85%; /* Increased table width from 70% to 85% */
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 6px; /* Reduced padding to decrease row height */
+    text-align: center;
+    vertical-align: middle;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+    width: auto;
+    padding: 4px; /* Slightly reduced padding for more compact inputs */
+    box-sizing: border-box;
+}
+
+.search-form {
+	display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    margin: 20px 0;
+    width: auto;
+}
+
+.search-input {
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 200px;
+}
+
+.search-button {
+    padding: 8px 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+
+button {
+    width: 80px;
+    padding: 4px 10px; /* Reduced vertical padding to match row height */
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 2px;
+}

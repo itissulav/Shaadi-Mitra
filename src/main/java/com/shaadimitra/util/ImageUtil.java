@@ -2,6 +2,8 @@ package com.shaadimitra.util;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import jakarta.servlet.http.Part;
 
@@ -71,13 +73,13 @@ public class ImageUtil {
 	 * @return {@code true} if the file was successfully uploaded, {@code false}
 	 *         otherwise.
 	 */
-	public boolean uploadImage(Part part, String rootPath, String saveFolder) {
-		String savePath = getSavePath(saveFolder);
+	public boolean uploadImage(Part part, String username) {
+		String savePath = getSavePath(username);
 		File fileSaveDir = new File(savePath);
 
 		// Ensure the directory exists
 		if (!fileSaveDir.exists()) {
-			if (!fileSaveDir.mkdir()) {
+			if (!fileSaveDir.mkdirs()) {
 				return false; // Failed to create the directory
 			}
 		}
@@ -95,7 +97,64 @@ public class ImageUtil {
 		}
 	}
 	
-	public String getSavePath(String saveFolder) {
-		return "C:/Users/itiss/Documents/Eclipse Projects/ShaadiMitra/src/main/webapp/resources/images/"+saveFolder+"/";
+
+	public boolean uploadImageToFeed(Part part, String username) {
+		String savePath = getSavePathFeed(username);
+		System.out.println("Save Path: "+savePath);
+		File fileSaveDir = new File(savePath);
+
+		// Ensure the directory exists
+		if (!fileSaveDir.exists()) {
+			if (!fileSaveDir.mkdirs()) {
+				return false; // Failed to create the directory
+			}
+		}
+		try {
+			// Get the image name
+			String imageName = getImageNameFromPart(part);
+			System.out.println(imageName);
+			// Create the file path
+			String filePath = savePath + "/" + imageName;
+			// Write the file to the server
+			part.write(filePath);
+			System.out.println("File Path: "+filePath);
+			return true; // Upload successful
+		} catch (IOException e) {
+			e.printStackTrace(); // Log the exception
+			return false; // Upload failed
+		}
+	}	
+
+    public static List<String> getUserImageFileNames(String username) {
+        String basePath = "C:/Users/itiss/Documents/Eclipse Projects/ShaadiMitra/src/main/webapp/resources/images/gallery";
+        String folderPath = basePath + "/" + username + "/" + "feed";
+
+        List<String> imageFileNames = new ArrayList<>();
+        File folder = new File(folderPath);
+
+        if (folder.exists() && folder.isDirectory()) {
+            File[] files = folder.listFiles();
+
+            if (files != null) {
+                for (File file : files) {
+                    String name = file.getName().toLowerCase();
+                    if (file.isFile() && (name.endsWith(".jpg") || name.endsWith(".jpeg") || name.endsWith(".png") || name.endsWith(".gif") || name.endsWith(".webp"))) {
+                        imageFileNames.add(file.getName());
+                    }
+                }
+            }
+        } else {
+            System.out.println("Folder does not exist: " + folderPath);
+        }
+
+        return imageFileNames;
+    }
+	
+	public String getSavePath(String username) {
+		return "C:/Users/itiss/Documents/Eclipse Projects/ShaadiMitra/src/main/webapp/resources/images/gallery/"+username;
+	}
+
+	public String getSavePathFeed(String username) {
+	    return "C:/Users/itiss/Documents/Eclipse Projects/ShaadiMitra/src/main/webapp/resources/images/gallery/"+ username + "/feed/";
 	}
 }

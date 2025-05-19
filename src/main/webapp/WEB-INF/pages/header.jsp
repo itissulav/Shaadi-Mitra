@@ -5,12 +5,20 @@
 <%@ page import="jakarta.servlet.http.HttpServletRequest"%>
 
 <%
-// Initialize necessary objects and variables
+String role = "partner";
 HttpSession userSession = request.getSession(false);
-String currentUser = (String) (userSession != null ? userSession.getAttribute("username") : null);
-// need to add data in attribute to select it in JSP code using JSTL core tag
+String username = null;
+
+if (userSession != null) {
+    username = (String) userSession.getAttribute("username");
+    if ("admin".equals(username)) {  // avoid NullPointerException
+        role = "admin";
+    }
+}
+String currentUser = username; // this will be null if session is null
 pageContext.setAttribute("currentUser", currentUser);
 %>
+
 
 <!-- Set contextPath variable -->
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
@@ -31,8 +39,17 @@ pageContext.setAttribute("currentUser", currentUser);
         <div class="nav">
             <ul class="main-nav">
                 <li><a class="nav-button" href="home">Home</a></li>
-                <li><a class="nav-button" href="admindashboard">About</a></li>
-                <li><a class="nav-button" href="explore">Explore</a></li>
+                
+                <% if (role.equals("admin")) { %>
+                	<li><a class="nav-button" href="admindashboard">Dash</a></li>
+                <%} else { %>
+                	<li><a class="nav-button" href="about">About</a></li>
+                <%} %>
+                <% if (role.equals("admin")) { %>
+                	<li><a class="nav-button" href="database">Database</a></li>
+                <%} else { %>
+                	<li><a class="nav-button" href="explore">Explore</a></li>
+                <%} %>
                 <li><a class="nav-button" href="profile">Profile</a></li>
 				<li>
 					<c:choose>

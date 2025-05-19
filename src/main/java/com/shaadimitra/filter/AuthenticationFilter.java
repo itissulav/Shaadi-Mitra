@@ -39,7 +39,7 @@ public class AuthenticationFilter implements Filter {
 		// Get the requested URI
 		String uri = req.getRequestURI();
 
-		if (uri.endsWith(".css") || uri.endsWith(HOME) || uri.endsWith(ROOT) || uri.endsWith(".ttf") || uri.endsWith(".png") || uri.endsWith(".jpg")) {
+		if (uri.endsWith(".css") || uri.endsWith(HOME) || uri.endsWith(ROOT) || uri.endsWith(".ttf") || uri.endsWith(".png") || uri.endsWith(".jpg")|| uri.endsWith(".jpeg")) {
 			chain.doFilter(request, response);
 			return;
 		}
@@ -55,7 +55,7 @@ public class AuthenticationFilter implements Filter {
 			}
 		} else {
 			if (uri.endsWith(LOGIN) || uri.endsWith(REGISTER) || uri.endsWith(ROOT)) {
-				res.sendRedirect(req.getContextPath() + LOGIN);
+				res.sendRedirect(req.getContextPath() + HOME);
 			} else {
 				chain.doFilter(request, response);
 			}

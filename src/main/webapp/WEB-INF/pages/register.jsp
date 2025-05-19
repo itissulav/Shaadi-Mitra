@@ -25,7 +25,6 @@
 
 	<jsp:include page="header.jsp"/>
 	
-	<div class="register-box">
 		<h2>Create an Account</h2>
 		
 		<h1>Registration Form</h1>
@@ -43,8 +42,10 @@
 		<%
 		}
 		%>
+	
+	<div class="register-box">
 
-		<form action="${pageContext.request.contextPath}/register" method="post">
+		<form action="${pageContext.request.contextPath}/register" method="post" enctype="multipart/form-data">
 			<div class="row">
 				<div class="col">
 					<label for="firstName">First Name:</label> <input type="text"
@@ -102,6 +103,12 @@
 				<div class="col">
 					<label for="confirm-password">Confirm Password:</label> <input type="password"
 						id="confirmpassword" name="confirmpassword" required>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<label for="profilePicture">Profile Picture:</label> <input type="file"
+						id="profilePicture" name="profilePicture" required accept = "image/*">
 				</div>
 			</div>
 			<button type="submit" class="register-button">Register</button>

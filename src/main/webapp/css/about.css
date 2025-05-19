@@ -73,3 +73,30 @@ h1{
 .review_card p{
 	width : 50%;
 }
+
+.find-mitra-btn {
+  width: fit-content;
+  margin: 2rem auto;
+  margin-top: 0px;
+  text-align: center;
+  align-self: center;
+  align-items: center;
+  display: block;
+  padding: 0.8rem 2rem;
+  font-family: 'Montserrat', serif;
+  font-size: 1rem;
+  color: #fff;
+  background: linear-gradient(145deg, #b76e79, #f7c59f);
+  border: none;
+  border-radius: 2rem;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(183, 110, 121, 0.4);
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.find-mitra-btn:hover {
+  background: linear-gradient(145deg, #a85e68, #e6b088);
+  box-shadow: 0 8px 20px rgba(183, 110, 121, 0.6);
+  transform: translateY(-2px);
+}

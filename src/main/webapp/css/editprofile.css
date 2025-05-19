@@ -1,44 +1,15 @@
 @charset "UTF-8";
 
-    body {
+ body {
       margin: 0;
       font-family: Montserrat, sans-serif;
       background-color: #F8F3EC;
     }
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 50px;
-    }
-
-    header h1 {
-      font-size: 24px;
-      letter-spacing: 5px;
-    }
-
-    nav a {
-      margin-left: 30px;
-      text-decoration: none;
-      color: #333;
-      font-size: 16px;
-    }
-
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 40px;
-    }
-
-    .profile-pic {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      background-color: #d4d4d4;
-      margin-bottom: 40px;
-    }
+.form-container{
+	display:flex;
+	justify-content: center;
+}
 
     .form {
       display: grid;
@@ -102,3 +73,15 @@
     .buttons button.discard {
       background-color: #d6a697;
     }
+
+.error-message{
+	color: red;
+	text-align: center;
+	font-weight: bold;
+}
+
+.success-message {
+	color: green;
+	text-align: center;
+	font-weight: bold;
+}

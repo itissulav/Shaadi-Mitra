@@ -1,72 +1,178 @@
-@charset "UTF-8";
-
-body{
-	background-color: #F9F3EC;
+body {
+  background-color: #F8F3EC;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  height: fit-content;
 }
 
-h1{
-	color: #414B3B;
-	text-align: center;
-	font-family: Montserrat;
-	font-size: 30px;
-	font-style: normal;
-	font-weight: 400;
-	line-height: normal;
-	letter-spacing: 5.6px;
-}
-
-.title{
-	color: white;
-	text-align: center;
-	font-family: Amsterdam;
-	font-size: 15px;
-	font-style: normal;
-	font-weight: 400;
-	line-height: normal;
-	letter-spacing: 3.6px;
-}
-
-.profile{
-	margin-top: 5%;
-	display:flex;
-	justify-content: center;
-}
-
-.profile-card{
+.explore-wrapper {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around; /* horizontal */
-  align-items: center;     /* vertical */
-  width: 80vh;
-  background-color: #543a14;
+  justify-content: center;
+  padding: 2rem;
+  transform: scale(0.95);
 }
 
-.profile-card-details{
-	flex: 50%;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
-}
-
-.profile-card-details p{
-	text-align: center;
-}
-
-.profile-card-image{
-	flex:40%;
-}
-
-.profile-card img {
-  width: 250px;          /* or any size you prefer */
-  height: 400px;
-  object-fit: cover;     /* crop image to fill the box */
-  border-radius: 10%;    /* optional: makes it circular */
-  padding: 15px;
-}
-
-.card-button-container{
+.explore-content {
   display: flex;
-  justify-content: center; /* horizontal */
-  align-items: center;     /* vertical */	
+  gap: 2rem;
+  max-width: 1200px;
+  width: 100%;
+  align-items: stretch;
+}
+
+/* LEFT PANEL (Feed Photos) */
+.group-left {
+  flex: 30%;
+  width: 80%;
+  height: 487px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow-y: auto;
+}
+
+.group-left img {
+  width: 100%;
+  border-radius: 1.2rem;
+  object-fit: cover;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* CENTER CARD */
+.group-center {
+  flex: 30%;
+  width: 80%;
+  height: fit-content;
+  background-color: #F8F3EC;
+  border-radius: 1.5rem;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  justify-content: space-between;
+}
+
+.group-center-top {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.group-center-top img {
+  width: 100%;
+  height: auto;
+  border-radius: 1.2rem;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.group-center-bottom{
+	margin-top: 30px;
+}
+
+.group-center h1 {
+  text-align: center;
+  font-family: Amsterdam, cursive;
+  font-size: 2rem;
+  margin: 1rem 0 0.5rem 0;
+  color: #221917;
+}
+
+.group-center p {
+  font-size: 1rem;
+  color: #414B3B;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.yes-button, .no-button {
+  padding: 0.7rem 2rem;
+  font-size: 1rem;
+  border-radius: 1rem;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.yes-button {
+  background-color: #D4A48D;
+  color: white;
+}
+
+.yes-button:hover {
+  background-color: #c2937c;
+}
+
+.no-button {
+  background-color: #221917;
+  color: white;
+}
+
+.no-button:hover {
+  background-color: #1a140f;
+}
+
+/* RIGHT CARD */
+.group-right {
+  flex: 30%;
+  width: 80%;
+  height: fit-content;
+  background-color: #F8F3EC;
+  border-radius: 1.5rem;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  justify-content: space-between;
+}
+
+.group-right-top h2 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #221917;
+  margin: 0.6rem 0;
+  letter-spacing: 0.03rem;
+}
+
+.group-right-bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.profile-details-count {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #221917;
+}
+
+.profile-details-heading {
+  font-size: 0.9rem;
+  color: #414B3B;
+}
+
+/* Optional Share Button (if needed) */
+.share-button {
+  margin-top: 1.2rem;
+  background-color: #D4A48D;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.group-left::-webkit-scrollbar {
+  display: none;                 /* Chrome, Safari, Opera */
 }
 

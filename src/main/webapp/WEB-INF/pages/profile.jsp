@@ -1,6 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.List" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page import = "com.shaadimitra.controller.ProfileController" %>
+<%@ page import = "com.shaadimitra.model.PartnerModel" %>
+
+<%
+	String username = (String) session.getAttribute("username");
+	PartnerModel partner = (PartnerModel) session.getAttribute("userProfileDetails");
+	List<String> imageList = (List<String>) session.getAttribute("imageList");
+	
+	String profileImage = partner.getProfileimage();
+	String firstName = partner.getFirst_name();
+%>
 
 <!DOCTYPE html>
 <html>
@@ -28,18 +40,16 @@
 <body>
 	<jsp:include page="header.jsp"/>
 	
-	<c:forEach items="${list}" var="l">
-		<p>${l}</p>
-	</c:forEach>
+	
 		
 	<div class = "profile-container">
 		<div class = "image-grid">
-			<% for (int i = 1; i <= 5; i++) { %>
+			<% for (String image: imageList) { %>
 			    <div class="image-box">
-			        <img src="<%= request.getContextPath() %>/resources/images/gallery/sulavinggg/<%= i %>.jpeg" alt="photo<%= i %>" />
+			        <img src="<%= request.getContextPath() %>/resources/images/gallery/<%= username %>/feed/<%= image%>" alt="photo <%= image %>" />
 			    </div>
 			<% } %>
-			<form action="${pageContext.request.contextPath}/profile" method="post" class="image-box upload-box">
+			<form action="${pageContext.request.contextPath}/profile" method="post" class="image-box upload-box" enctype="multipart/form-data">
 			    <label for="imageUpload" class="upload-label">+</label>
 			    <input type="file" id="imageUpload" name="newImage" accept="image/*" onchange="this.form.submit()">
 			</form>
@@ -48,9 +58,9 @@
 		</div>
 		<div class = "details_container">
 			<div class = "profile-image-container">
-				<img alt="profilepicture" src="resources/images/gallery/sulavinggg/7.jpeg">
+				<img src="<%= request.getContextPath() %>/resources/images/gallery/<%= username %>/<%= profileImage %>">
 			</div>
-			<h1 class = "user-name">Sulav Paudel</h1>
+			<h1 class = "user-name"><%= username %></h1>
 			<div class = "profile-details">
 				<div>
 					<h1 class = "profile-details-count">5</h1>
@@ -67,7 +77,7 @@
 					<h1 class = "profile-details-heading">Matches</h1>
 				</div>				
 			</div>
-			<h1 class = "user-name">Hello my name is Sulav</h1>		
+			<h1 class = "user-name">Hello my name is <%=firstName %></h1>		
 			
 			<div class = "profile-buttons">
 				<a href="editprofile">Edit Profile</a>
